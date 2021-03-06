@@ -1,3 +1,3 @@
 class UserClassification < ApplicationRecord
-  has_one :user
+  has_many :users
 end
