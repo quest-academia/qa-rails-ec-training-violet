@@ -31,19 +31,22 @@ ActiveRecord::Schema.define(version: 2021_03_05_081759) do
     t.string "description", limit: 256
     t.bigint "sale_status_id", null: false
     t.bigint "product_status_id", null: false
-    t.timestamp "regist_date"
+    t.datetime "regist_date"
     t.bigint "user_id", null: false
     t.string "delete_flag", limit: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["product_status_id"], name: "index_products_on_product_status_id"
+    t.index ["sale_status_id"], name: "index_products_on_sale_status_id"
   end
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "purchase_price"
     t.integer "purchase_quantity"
     t.string "purchase_company", limit: 128
-    t.timestamp "order_date"
-    t.timestamp "purchase_date"
+    t.datetime "order_date"
+    t.datetime "purchase_date"
     t.bigint "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -56,5 +59,8 @@ ActiveRecord::Schema.define(version: 2021_03_05_081759) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "product_statuses"
+  add_foreign_key "products", "sale_statuses"
   add_foreign_key "purchases", "products"
 end
