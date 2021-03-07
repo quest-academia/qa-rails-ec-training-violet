@@ -9,7 +9,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.references :product_status, null: false, foreign_key: true
       t.datetime :regist_date
       t.bigint :user_id, null: false, foreign_key: true
-      t.column :delete_flag, "char(1)"
+      t.boolean :delete_flag, null: false
 
       t.timestamps
     end
