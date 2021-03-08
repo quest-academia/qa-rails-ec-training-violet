@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :last_name, limit: 16
       t.string :first_name, limit: 16
       t.string :zipcode, limit: 16
-      t.string :prefecturev, limit: 16
+      t.string :prefecture, limit: 16
       t.string :municipality, limit: 16
       t.string :address, limit: 32
       t.string :apartments, limit: 32

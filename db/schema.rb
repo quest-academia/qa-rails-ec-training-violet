@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_03_05_092750) do
     t.string "last_name", limit: 16
     t.string "first_name", limit: 16
     t.string "zipcode", limit: 16
-    t.string "prefecturev", limit: 16
+    t.string "prefecture", limit: 16
     t.string "municipality", limit: 16
     t.string "address", limit: 32
     t.string "apartments", limit: 32
