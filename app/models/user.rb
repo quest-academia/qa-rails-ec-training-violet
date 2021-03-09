@@ -13,4 +13,5 @@ class User < ApplicationRecord
   validates :phone_number, length: { maximum: 15 }, format: { with: /\A[0-9]+\z/ }, presence: true
   validates :delete_flag, inclusion: { in: [true, false]}
 
+  has_many :products
 end
