@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_05_092750) do
+ActiveRecord::Schema.define(version: 2021_03_09_101235) do
 
   create_table "user_classifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "user_classification_name", limit: 32
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_03_05_092750) do
     t.string "phone_number", limit: 16
     t.bigint "user_classification_id", null: false
     t.string "company_name", limit: 128
-    t.boolean "delete_flag"
+    t.boolean "delete_flag", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_classification_id"], name: "index_users_on_user_classification_id"

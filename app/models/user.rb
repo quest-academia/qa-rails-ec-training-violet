@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :municipality, length: { maximum: 10 }, presence: true
   validates :address, length: { maximum: 15 }, presence: true
   validates :apartments, length: { maximum: 20 }, presence: true
-  validates :email, format: { with: /\A\S+@\S+\.\S+\z/ }, precence: true
+  validates :email, format: { with: /\A\S+@\S+\.\S+\z/ }, presence: true
   validates :phone_number, length: { maximum: 15 }, format: { with: /\A[0-9]+\z/ }, presence: true
   validates :delete_flag, inclusion: { in: [true, false]}
 
